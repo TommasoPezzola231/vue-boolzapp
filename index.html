@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boolzapp</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body class="d-flex justify-content-center align-items-center">
+    
+    <div id="app">
+
+        <!--Contenitore Generale-->
+        <main class="box mx-auto d-flex">
+
+            <section class="leftBox d-flex flex-column">
+                <!--Nome utente e foto profilo-->
+                <div class="utente d-flex justify-content-between align-items-center">
+                    <div class="fotoENome">
+                        <img src="./img/avatar_io.jpg" class="align-self-center">
+                        <span>Sofia</span>
+                    </div>
+
+                    <div>
+                        <i class="fa-solid fa-rotate-right me-3"></i>
+                        <i class="fa-solid fa-message me-3"></i>
+                        <i class="fa-solid fa-info me-3"></i>
+                    </div>
+                </div>
+
+                <!--Messaggio notifiche-->
+                <div class="notifications d-flex align-items-center">
+                    <div class="fotoNotification h-75  ms-2">
+                        <i class="fa-regular fa-bell-slash"></i>
+
+                    </div>
+
+                    <div class="d-flex flex-column text-secondary ms-2">
+                        <span>Ricevi notifiche di nuovi messaggi</span>
+                        <a>Ricevi notifiche desktop</a>
+                    </div>
+                </div>
+
+                <!--Elenco chat-->
+                <div class="allChat">
+                    <div class="search">
+                        <span class="input-group-text" id="search"><i class="fa-solid fa-magnifying-glass"></i></span>
+                        <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" aria-describedby="search">
+                    </div>
+
+                    <div class="chatList">
+                       
+                        <template v-for="(contact, index) in contacts">
+                            <div class="chat d-flex">
+                                <img :src="contact.avatar" :alt="contact.name" class="align-self-center ms-2">
+
+                                <div class="d-flex flex-column ms-2">
+                                    <h5 class="mt-1">{{contact.name}}</h5>
+                                    <small>Ultimo messaggio inviato</small>
+                                </div>
+
+                            </div>
+                        </template>
+
+                    </div>
+                </div>
+
+            </section>
+
+            <section class="rightBox">
+
+            </section>
+        </main>
+    </div>
+
+    <script src="./js/main.js"></script>
+</body>
+</html>

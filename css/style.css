@@ -1,0 +1,91 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    max-height: 100%;
+    width: 100vw;
+    max-width: 100%;
+    background: rgb(215,219,213);
+    background: -moz-linear-gradient(0deg, rgba(215,219,213,1) 80%, rgba(215,219,213,1) 80%, rgba(0,150,136,1) 80%);
+    background: -webkit-linear-gradient(0deg, rgba(215,219,213,1) 80%, rgba(215,219,213,1) 80%, rgba(0,150,136,1) 80%);
+    background: linear-gradient(0deg, rgba(215,219,213,1) 80%, rgba(215,219,213,1) 80%, rgba(0,150,136,1) 80%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#d7dbd5",endColorstr="#009688",GradientType=1);
+}
+
+.box {
+    width: 1200px;
+    height: 95vh;
+}
+
+.leftBox {
+    width: 400px;
+    height: 100%;
+    background-color: white;
+}
+
+.rightBox {
+    flex-grow: 1;
+    height: 100%;
+    background-color: black;
+}
+
+.utente {
+    height: 70px;
+    background-color: #eaeaea;
+}
+
+.fotoENome {
+    height: 100%;
+}
+
+img {
+    height: 85%;
+    aspect-ratio: 1;
+    border-radius: 100%;
+    display: inline-block;
+}
+
+.notifications {
+    background-color: #8edafc;
+    color: #8edafc;
+    height: 60px;
+}
+
+.fotoNotification {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90%;
+    aspect-ratio: 1;
+    border-radius: 100%;
+    background-color: white;
+    font-size: 20px;
+}
+
+.notifications a {
+    text-decoration: underline!important;
+    cursor: pointer;
+    font-size: 10px;
+}
+
+.search {
+    display: flex;
+}
+
+.search > input:focus {
+    border: none;
+    box-shadow: none;
+}
+
+.chatList {
+    overflow-y: scroll;
+}
+
+.chat {
+    height: 70px;
+    border-top: solid 1px lightgray;
+}
