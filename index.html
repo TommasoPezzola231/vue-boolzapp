@@ -98,32 +98,16 @@
 
                 <div class="boxChat py-3 px-5 d-flex flex-column position-relative">
                     <template v-for="(data, index) in contacts[chat].messages">
-                        <div :class="(data.status == `sent`) ? `message position-relative rounded send` : `message position-relative rounded received`">
+                        <div :class="(data.status == `received`) ?  `message position-relative rounded received` : `message position-relative rounded send`">
                             <p>{{data.message}}</p>
                             <span class="position-absolute bottom-0 end-0 time">12:00</span>
                         </div>
                     </template>
-                    <!--Prova 1
-                    <div class="message received position-relative rounded">
-                        <p>rbtesrbreyeny5n</p>
-                        <span class="position-absolute bottom-0 end-0 time">12:00</span>
-                    </div>
-
-                    <div class="message send position-relative rounded">
-                        <p>rbtesrbreyeny5n</p>
-                        <span class="position-absolute bottom-0 end-0 time">12:00</span>
-                    </div>
-
-                    <div class="message send position-relative rounded">
-                        <p>rbtesrbreyeny5nergshbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</p>
-                        <span class="position-absolute bottom-0 end-0 time">12:00</span>
-                    </div>
-                    -->
                 </div>
 
                 <div class="sendMessages d-flex align-items-center">
                     <i class="fa-regular fa-face-smile m-5 fs-5"></i>
-                    <input type="text"  class="flex-grow-1 h-75 rounded" placeholder="Scrivi un messaggio">
+                    <input type="text" v-model="newMessage.message" @keyup.enter="sendMessage()" class="flex-grow-1 h-75 rounded" placeholder="Scrivi un messaggio">
                     <i class="fa-solid fa-microphone m-5 fs-5"></i>
                 </div>
             </section>

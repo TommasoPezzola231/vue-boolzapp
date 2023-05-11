@@ -167,10 +167,22 @@ const { createApp } = Vue
             }
         ],
         chat: 0,
+        newMessage: [
+            {
+                date: `Now`,
+                message: ``,
+                status: 'sent'
+            }
+        ]
         
       }
     },
     methods: {
-
+        sendMessage() {
+            let newElement = {...this.newMessage};
+            this.contacts[this.chat].messages.push(newElement);
+            this.newMessage.message = ``;
+            console.log("eseguito con successo")
+        }
     }
   }).mount('#app')
