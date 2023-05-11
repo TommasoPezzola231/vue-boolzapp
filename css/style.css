@@ -90,10 +90,30 @@ img {
     border-top: solid 1px lightgray;
 }
 
+.time {
+    font-size: 12px;
+}
+
 .boxChat {
     height: calc(100% - 140px);
     background-image: url(../img/mine.jpg);
     overflow-y: scroll;
+}
+
+.message {
+    padding: 0.7rem;
+    margin: 0.5rem 0;
+    min-width: 100px;
+    max-width: 400px;
+}
+
+.received {
+    background-color: white;
+}
+
+.send {
+    background-color: #d5f9ba;
+    align-self: flex-end;
 }
 
 .sendMessages {

@@ -55,12 +55,16 @@
                     <div class="chatList">
                        
                         <template v-for="(contact, index) in contacts">
-                            <div class="chat d-flex">
+                            <div class="chat d-flex position-relative">
                                 <img :src="contact.avatar" :alt="contact.name" class="align-self-center ms-2">
 
                                 <div class="d-flex flex-column ms-2">
                                     <h5 class="mt-1">{{contact.name}}</h5>
                                     <small>Ultimo messaggio inviato</small>
+                                </div>
+
+                                <div class="time position-absolute top-0 end-0">
+                                    12:00
                                 </div>
 
                             </div>
@@ -92,8 +96,21 @@
 
                 </div>
 
-                <div class="boxChat py-2 px-5">
+                <div class="boxChat py-3 px-5 d-flex flex-column position-relative">
+                    <div class="message received position-relative rounded">
+                        <p>rbtesrbreyeny5n</p>
+                        <span class="position-absolute bottom-0 end-0 time">12:00</span>
+                    </div>
 
+                    <div class="message send position-relative rounded">
+                        <p>rbtesrbreyeny5n</p>
+                        <span class="position-absolute bottom-0 end-0 time">12:00</span>
+                    </div>
+
+                    <div class="message send position-relative rounded">
+                        <p>rbtesrbreyeny5nergshbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</p>
+                        <span class="position-absolute bottom-0 end-0 time">12:00</span>
+                    </div>
                 </div>
 
                 <div class="sendMessages d-flex align-items-center">
