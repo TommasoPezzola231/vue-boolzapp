@@ -89,3 +89,15 @@ img {
     height: 70px;
     border-top: solid 1px lightgray;
 }
+
+.boxChat {
+    height: calc(100% - 140px);
+    background-image: url(../img/mine.jpg);
+    overflow-y: scroll;
+}
+
+.sendMessages {
+    height: 70px;
+    background-color: #eaeaea;
+    color: gray;
+}
