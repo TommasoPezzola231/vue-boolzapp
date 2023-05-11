@@ -165,7 +165,8 @@ const { createApp } = Vue
                     }
                 ],
             }
-        ]
+        ],
+        chat: 0,
         
       }
     },
