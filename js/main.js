@@ -173,6 +173,13 @@ const { createApp } = Vue
                 message: ``,
                 status: 'sent'
             }
+        ],
+        automaticMessage: [
+            {
+                date: "Now",
+                message: "",
+                status: ''
+            }
         ]
         
       }
@@ -182,7 +189,17 @@ const { createApp } = Vue
             let newElement = {...this.newMessage};
             this.contacts[this.chat].messages.push(newElement);
             this.newMessage.message = ``;
-            console.log("eseguito con successo")
+            console.log("eseguito con successo");
+            this.sendAutoMessage(this.contacts[this.chat].messages);
+        },
+        sendAutoMessage(wherePush) {
+            setTimeout(function() {
+                let botMessage = {...this.automaticMessage};
+                botMessage.message = `Ok!`;
+                botMessage.status = `received`
+                wherePush.push(botMessage);
+                console.log("eseguito con successo");
+            }, 3 * 1000)
         }
     }
   }).mount('#app')
