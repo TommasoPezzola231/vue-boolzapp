@@ -202,8 +202,6 @@ const { createApp } = Vue
             }, 3 * 1000)
         },
         rimuoviMessaggio(i) {
-            console.log("ciao!")
-            console.log(this.contacts[this.chat].messages[i])
             this.contacts[this.chat].messages.splice(i,1)
         },
         filterName() {
