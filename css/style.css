@@ -88,6 +88,8 @@ img {
 .chat {
     height: 70px;
     border-top: solid 1px lightgray;
+    display: flex;
+    position: relative;
 }
 
 .time {

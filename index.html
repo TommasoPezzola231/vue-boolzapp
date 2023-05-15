@@ -49,18 +49,18 @@
                 <div class="allChat">
                     <div class="search">
                         <span class="input-group-text" id="search"><i class="fa-solid fa-magnifying-glass"></i></span>
-                        <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" aria-describedby="search">
+                        <input type="text" v-model="search" @keyup="filterName" class="form-control" placeholder="Cerca o inizia una nuova chat">
                     </div>
 
                     <div class="chatList">
                        
                         <template v-for="(contact, index) in contacts">
-                            <div @click="chat = index" class="chat d-flex position-relative">
+                            <div @click="chat = index" v-show="contact.visible == true" class="chat" :class="(chat == index) ? `bg-secondary-subtle` : ``">
                                 <img :src="contact.avatar" :alt="contact.name" class="align-self-center ms-2">
 
                                 <div class="d-flex flex-column ms-2">
                                     <h5 class="mt-1">{{contact.name}}</h5>
-                                    <small>Ultimo messaggio inviato</small>
+                                    <small>{{contact.messages[contact.messages.length - 1].message}}</small>
                                 </div>
 
                                 <div class="time position-absolute top-0 end-0">

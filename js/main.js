@@ -180,8 +180,8 @@ const { createApp } = Vue
                 message: "",
                 status: ''
             }
-        ]
-        
+        ],
+        search: "",     
       }
     },
     methods: {
@@ -200,6 +200,20 @@ const { createApp } = Vue
                 wherePush.push(botMessage);
                 console.log("eseguito con successo");
             }, 3 * 1000)
+        },
+        delete(i) {
+            this.contacts[this.chat].messages[i].splice(i,1)
+        },
+        filterName() {
+            this.contacts.forEach(element => {
+                if (element.name.toLowerCase().includes(this.search)) {
+                    element.visible = true;
+                    console.log(`1` + element.visible)
+                } else {
+                    element.visible = false;
+                    console.log(`2` + element.visible)
+                }
+            });
         }
-    }
+    },
   }).mount('#app')
