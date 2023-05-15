@@ -103,11 +103,16 @@ img {
 }
 
 .message {
-    padding: 0.7rem;
+    padding: 1rem;
     margin: 0.5rem 0;
     min-width: 100px;
     max-width: 400px;
     word-break: break-word
+}
+
+.message:hover .delete {
+    display: block!important;
+    cursor: pointer;
 }
 
 .received {

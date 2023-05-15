@@ -201,9 +201,10 @@ const { createApp } = Vue
                 console.log("eseguito con successo");
             }, 3 * 1000)
         },
-        delete(i) {
+        rimuoviMessaggio(i) {
+            console.log("ciao!")
             console.log(this.contacts[this.chat].messages[i])
-            this.contacts[this.chat].messages[i].splice(i,1)
+            this.contacts[this.chat].messages.splice(i,1)
         },
         filterName() {
             this.contacts.forEach(element => {
